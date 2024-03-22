@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7qmlryhm7p54"]
+
+[ext_resource type="Texture2D" uid="uid://ud6qr7qx50xf" path="res://icon.svg" id="1_jrvsp"]
+[ext_resource type="Script" path="res://scenes/follower.gd" id="2_w2kmm"]
+
+[node name="Follower" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_jrvsp")
+script = ExtResource("2_w2kmm")
