@@ -58,7 +58,10 @@ shape = SubResource("RectangleShape2D_5dn62")
 position = Vector2(257, -72)
 
 [node name="Ball2" parent="." instance=ExtResource("2_w2t2k")]
-position = Vector2(777, 108)
+position = Vector2(81, 68)
+
+[node name="Sprite2D" parent="Ball2" index="0"]
+modulate = Color(0, 1, 0, 1)
 
 [node name="Ball3" parent="." instance=ExtResource("2_w2t2k")]
 position = Vector2(735, 292)
@@ -81,3 +84,4 @@ autoplay = "move_2"
 position = Vector2(629, 549)
 
 [editable path="Floor"]
+[editable path="Ball2"]
