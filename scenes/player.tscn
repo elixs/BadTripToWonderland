@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbola84ibuu5w"]
+
+[ext_resource type="Texture2D" uid="uid://ikbys8jxhh26" path="res://assets/Cat Sprite Sheet.png" id="1_r0acr"]
+[ext_resource type="Texture2D" uid="uid://b3wa3l0oi0mgp" path="res://assets/buer/buer(0).png" id="2_q2iw0"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(41, 41)
+rotation = 0.36415
+scale = Vector2(4, 4)
+texture = ExtResource("1_r0acr")
+hframes = 8
+vframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Buer(0)" type="Sprite2D" parent="."]
+position = Vector2(159, 77)
+texture = ExtResource("2_q2iw0")

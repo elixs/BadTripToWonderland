@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://dahksd7lb0ugu"]
+
+[ext_resource type="PackedScene" uid="uid://btserur3uj23f" path="res://scenes/floor.tscn" id="1_bfptd"]
+[ext_resource type="PackedScene" uid="uid://cfjyfwdbqk2wa" path="res://scenes/ball.tscn" id="2_w2t2k"]
+[ext_resource type="PackedScene" uid="uid://353muwmpwpac" path="res://scenes/movable_floor.tscn" id="3_oey2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dn62"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_koq5s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Floor2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(629, 549)]
+}
+
+[sub_resource type="Animation" id="Animation_gvah0"]
+resource_name = "move_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Floor2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(76, 570), Vector2(629, 549)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uf2of"]
+_data = {
+"RESET": SubResource("Animation_koq5s"),
+"move_2": SubResource("Animation_gvah0")
+}
+
+[node name="Main" type="Node2D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_bfptd")]
+position = Vector2(263, 332)
+
+[node name="Sprite2D" parent="Floor" index="0"]
+modulate = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" parent="Floor" index="1"]
+shape = SubResource("RectangleShape2D_5dn62")
+
+[node name="Ball" parent="." instance=ExtResource("2_w2t2k")]
+position = Vector2(257, -72)
+
+[node name="Ball2" parent="." instance=ExtResource("2_w2t2k")]
+position = Vector2(777, 108)
+
+[node name="Ball3" parent="." instance=ExtResource("2_w2t2k")]
+position = Vector2(735, 292)
+
+[node name="Floor3" parent="." instance=ExtResource("1_bfptd")]
+position = Vector2(835, 466)
+rotation = 0.125341
+
+[node name="Floor4" parent="Floor3" instance=ExtResource("1_bfptd")]
+position = Vector2(195, -243)
+rotation = 2.81429
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uf2of")
+}
+autoplay = "move_2"
+
+[node name="Floor2" parent="." instance=ExtResource("3_oey2f")]
+position = Vector2(629, 549)
+
+[editable path="Floor"]
