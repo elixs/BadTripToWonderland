@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dahksd7lb0ugu"]
+[gd_scene load_steps=5 format=3 uid="uid://dahksd7lb0ugu"]
 
 [ext_resource type="PackedScene" uid="uid://btserur3uj23f" path="res://scenes/floor.tscn" id="1_bfptd"]
 [ext_resource type="PackedScene" uid="uid://dbola84ibuu5w" path="res://scenes/beelzebub.tscn" id="2_f2u63"]
 [ext_resource type="PackedScene" uid="uid://b7qmlryhm7p54" path="res://scenes/follower.tscn" id="3_xlrr4"]
+[ext_resource type="PackedScene" uid="uid://crx2acn3mci76" path="res://scenes/enemy.tscn" id="4_wvkk1"]
 
 [node name="Main" type="Node2D"]
 scale = Vector2(0.997977, 1)
@@ -11,8 +12,19 @@ scale = Vector2(0.997977, 1)
 position = Vector2(323, 282)
 scale = Vector2(9.2567, 1)
 
+[node name="Floor2" parent="." instance=ExtResource("1_bfptd")]
+position = Vector2(587.188, 167)
+rotation = -1.57079
+scale = Vector2(9.2567, 1)
+
 [node name="Beelzebub" parent="." instance=ExtResource("2_f2u63")]
 position = Vector2(215.436, 184)
 
 [node name="Follower" parent="." instance=ExtResource("3_xlrr4")]
 position = Vector2(361.732, 132)
+
+[node name="Enemy" parent="." instance=ExtResource("4_wvkk1")]
+position = Vector2(6.01216, 132)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_wvkk1")]
+position = Vector2(432.876, 176)
