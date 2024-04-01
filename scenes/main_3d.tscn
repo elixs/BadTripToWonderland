@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn3aulbjksd57"]
+[gd_scene load_steps=11 format=3 uid="uid://bn3aulbjksd57"]
 
 [ext_resource type="Texture2D" uid="uid://ud6qr7qx50xf" path="res://icon.svg" id="1_a0tis"]
+[ext_resource type="ArrayMesh" uid="uid://bl1qe76n8ykw5" path="res://assets/kenney_conveyor-kit/Models/OBJ format/box-long.obj" id="1_u0qme"]
+[ext_resource type="PackedScene" uid="uid://bpqufpa0n81vp" path="res://scenes/player_3d.tscn" id="3_nni8q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tunie"]
 bounce = 1.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_dra0q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkr8n"]
 
@@ -26,20 +26,18 @@ sky = SubResource("Sky_v058g")
 [node name="Main3D" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 2, 0, 0, 0, 20, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_tunie")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_dra0q")
+mesh = ExtResource("1_u0qme")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_wkr8n")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.930418, 0.366501, 0, -0.366501, 0.930418, 0.598278, 1.94755, 0.0355526)
-
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.598278, 1.94755, 0.0355526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.598278, 1.94755, -0.0110536)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
@@ -49,11 +47,8 @@ shape = SubResource("SphereShape3D_rf50v")
 mesh = SubResource("SphereMesh_34a8u")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="RigidBody3D"]
-remote_path = NodePath("../../Camera3D")
-update_position = false
-update_rotation = false
-update_scale = false
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2bmpe")
+
+[node name="Player3D" parent="." instance=ExtResource("3_nni8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18553, 2.09801, 0)
