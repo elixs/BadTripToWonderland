@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://vfo1r2knklg2"]
+
+[ext_resource type="Script" path="res://autoload/game.gd" id="1_q8yr0"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_q8yr0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 222.0
+offset_top = 24.0
+offset_right = 390.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 64

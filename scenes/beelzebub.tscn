@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://dbola84ibuu5w"]
+[gd_scene load_steps=42 format=3 uid="uid://dbola84ibuu5w"]
 
 [ext_resource type="Script" path="res://scenes/beelzebub.gd" id="1_hg3bh"]
 [ext_resource type="Texture2D" uid="uid://ikbys8jxhh26" path="res://assets/Cat Sprite Sheet.png" id="1_r0acr"]
 [ext_resource type="Texture2D" uid="uid://b3wa3l0oi0mgp" path="res://assets/buer/buer(0).png" id="2_q2iw0"]
 [ext_resource type="PackedScene" uid="uid://bq4ppuk1qlbmr" path="res://scenes/bullet.tscn" id="2_rw87q"]
 [ext_resource type="PackedScene" uid="uid://d08ayl3ldl0gj" path="res://ui/pause_menu.tscn" id="5_01230"]
+[ext_resource type="AudioStream" uid="uid://dx1i033800k6y" path="res://assets/sounds/Swoosh_3.wav" id="6_ucglx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wya58"]
 size = Vector2(20, 36)
@@ -65,6 +66,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackAudio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_ucglx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_qtq7u"]
 resource_name = "fall"
@@ -255,7 +271,7 @@ states/walk/position = Vector2(625, 111)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_jybmt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_5jbgy"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_1mc0k"), "idle", "takeoff", SubResource("AnimationNodeStateMachineTransition_mqvll"), "walk", "takeoff", SubResource("AnimationNodeStateMachineTransition_40sch"), "takeoff", "jump", SubResource("AnimationNodeStateMachineTransition_pty8h"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_14l2r"), "fall", "land", SubResource("AnimationNodeStateMachineTransition_hd3pg"), "land", "idle", SubResource("AnimationNodeStateMachineTransition_3cx15"), "land", "walk", SubResource("AnimationNodeStateMachineTransition_h0jqs"), "walk", "fall", SubResource("AnimationNodeStateMachineTransition_huru0"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_d2pvp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_6r37r"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_rsoht"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_x4ui4"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_lx0p6")]
 graph_offset = Vector2(-90, 109)
 
-[node name="Beelzebub" type="CharacterBody2D"]
+[node name="Beelzebub" type="CharacterBody2D" groups=["save"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_hg3bh")
@@ -311,3 +327,19 @@ anim_player = NodePath("../AnimationPlayer")
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="JumpsLabel" type="Label" parent="."]
+offset_left = -91.0
+offset_top = -54.0
+offset_right = 91.0
+offset_bottom = -38.0
+horizontal_alignment = 1
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ucglx")
+bus = &"SFX"
+
+[node name="AttackAudio" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
