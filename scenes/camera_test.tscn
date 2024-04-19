@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40blukh0mghb"]
+
+[ext_resource type="Texture2D" uid="uid://ud6qr7qx50xf" path="res://icon.svg" id="1_tgj5u"]
+[ext_resource type="Script" path="res://scenes/camera_test.gd" id="1_xg7o0"]
+
+[node name="CameraTest" type="Node2D"]
+script = ExtResource("1_xg7o0")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-30, 247)
+texture = ExtResource("1_tgj5u")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(302, 211)
+texture = ExtResource("1_tgj5u")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(604, 299)
+texture = ExtResource("1_tgj5u")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(1092, 202)
+texture = ExtResource("1_tgj5u")
+
+[node name="Icon5" type="Sprite2D" parent="."]
+position = Vector2(1436, 201)
+texture = ExtResource("1_tgj5u")
+
+[node name="Icon6" type="Sprite2D" parent="."]
+position = Vector2(1735, 217)
+texture = ExtResource("1_tgj5u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+limit_left = 0
+limit_right = 1900
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MoveRight" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+texture = ExtResource("1_tgj5u")
+
+[node name="MoveLeft" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 128.0
+grow_vertical = 0
+texture = ExtResource("1_tgj5u")

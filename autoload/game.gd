@@ -62,3 +62,4 @@ func load_game():
 	# load data of all nodes in group save
 	var file = FileAccess.open("user://data.save", FileAccess.READ)
 	data = JSON.parse_string(file.get_as_text())
+	

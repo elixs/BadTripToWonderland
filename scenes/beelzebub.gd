@@ -17,8 +17,8 @@ var id = "beelzebub"
 @onready var bullet_spawn: Marker2D = %BulletSpawn
 @onready var attack_area: Area2D = $Pivot/AttackArea
 @onready var jumps_label: Label = $JumpsLabel
-@onready var camera_2d: Camera2D = $"../Camera2D"
 @onready var jump_audio: AudioStreamPlayer = $JumpAudio
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 func _ready() -> void:
@@ -84,8 +84,8 @@ func fire():
 	var bullet = bullet_scene.instantiate()
 	get_parent().add_child(bullet)
 	bullet.global_position = bullet_spawn.global_position
-	#bullet.global_rotation = (pivot.scale.x - 1) / 2 * PI
-	bullet.look_at(bullet.global_position + Vector2(pivot.scale.x, 0))
+	bullet.global_rotation = bullet_spawn.global_position.direction_to(get_global_mouse_position()).angle()
+	#bullet.look_at(bullet.global_position + Vector2(pivot.scale.x, 0))
 
 
 func get_data():

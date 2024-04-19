@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Debug="*res://autoload/debug.gd"
 Game="*res://autoload/game.tscn"
 LevelManager="*res://autoload/level_manager.tscn"
 

@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://dbqd3ygb18tvp"]
+
+[ext_resource type="Texture2D" uid="uid://b3wa3l0oi0mgp" path="res://assets/buer/buer(0).png" id="1_6vli2"]
+[ext_resource type="Script" path="res://scenes/buer.gd" id="2_q83n5"]
+[ext_resource type="Texture2D" uid="uid://hvdat7pi4oe4" path="res://assets/buer/buer(1).png" id="3_jtmip"]
+
+[sub_resource type="Animation" id="Animation_2f18g"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_6vli2")]
+}
+
+[sub_resource type="Animation" id="Animation_v7c4a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_6vli2")]
+}
+
+[sub_resource type="Animation" id="Animation_gldvw"]
+resource_name = "follow"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_6vli2"), ExtResource("3_jtmip")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86adr"]
+_data = {
+"RESET": SubResource("Animation_v7c4a"),
+"follow": SubResource("Animation_gldvw"),
+"idle": SubResource("Animation_2f18g")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jny1y"]
+animation = &"follow"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tl3vl"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_43jbx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cios5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j3w8q"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qr4k5"]
+states/follow/node = SubResource("AnimationNodeAnimation_jny1y")
+states/follow/position = Vector2(656, 85)
+states/idle/node = SubResource("AnimationNodeAnimation_tl3vl")
+states/idle/position = Vector2(375, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_43jbx"), "idle", "follow", SubResource("AnimationNodeStateMachineTransition_cios5"), "follow", "idle", SubResource("AnimationNodeStateMachineTransition_j3w8q")]
+
+[node name="Buer" type="Sprite2D"]
+top_level = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6vli2")
+script = ExtResource("2_q83n5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_86adr")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_qr4k5")
+anim_player = NodePath("../AnimationPlayer")

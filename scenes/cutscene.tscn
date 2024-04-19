@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvkqp6f04ruy4"]
+
+[ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_eps0a"]
+[ext_resource type="Texture2D" uid="uid://b3wa3l0oi0mgp" path="res://assets/buer/buer(0).png" id="1_jbr2w"]
+[ext_resource type="Texture2D" uid="uid://ud6qr7qx50xf" path="res://icon.svg" id="3_cnoxr"]
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_eps0a")
+
+[node name="Buer" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(573, 98)
+texture = ExtResource("1_jbr2w")
+
+[node name="Target" type="Marker2D" parent="."]
+position = Vector2(545, 272)
+gizmo_extents = 100.0
+
+[node name="Target2" type="Marker2D" parent="."]
+position = Vector2(145, 300)
+gizmo_extents = 100.0
+
+[node name="Target3" type="Marker2D" parent="."]
+position = Vector2(374, 39)
+gizmo_extents = 100.0
+
+[node name="Target4" type="Marker2D" parent="."]
+position = Vector2(68, 51)
+gizmo_extents = 100.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="CameraTargets" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CameraTarget1" type="Marker2D" parent="CameraTargets"]
+position = Vector2(320, 180)
+
+[node name="CameraTarget2" type="Marker2D" parent="CameraTargets"]
+position = Vector2(960, 180)
+
+[node name="CameraTarget3" type="Marker2D" parent="CameraTargets"]
+position = Vector2(1600, 180)
+
+[node name="CameraTarget4" type="Marker2D" parent="CameraTargets"]
+position = Vector2(2240, 180)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-47, 237)
+texture = ExtResource("3_cnoxr")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(564, 239)
+texture = ExtResource("3_cnoxr")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(1152, 230)
+texture = ExtResource("3_cnoxr")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(1852, 145)
+texture = ExtResource("3_cnoxr")
+
+[node name="Icon5" type="Sprite2D" parent="."]
+position = Vector2(2328, 201)
+texture = ExtResource("3_cnoxr")

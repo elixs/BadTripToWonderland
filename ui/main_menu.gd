@@ -9,6 +9,7 @@ extends MarginContainer
 func _ready() -> void:
 	start.pressed.connect(_on_start_pressed)
 	quit.pressed.connect(_on_quit_pressed)
+	start.grab_focus()
 
 
 func _on_start_pressed():
