@@ -1,35 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf8akws67qkhh"]
+[gd_scene load_steps=9 format=3 uid="uid://bf8akws67qkhh"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_nmwbc"]
-[ext_resource type="PackedScene" uid="uid://crx2acn3mci76" path="res://scenes/enemy.tscn" id="2_3hmbg"]
 [ext_resource type="TileSet" uid="uid://eik7u181gaf" path="res://resources/tileset.tres" id="2_p0tcw"]
+[ext_resource type="PackedScene" uid="uid://xx5ksb1k2s4f" path="res://scenes/mimi.tscn" id="3_aywyd"]
 [ext_resource type="PackedScene" uid="uid://dbola84ibuu5w" path="res://scenes/beelzebub.tscn" id="3_l8irn"]
 [ext_resource type="PackedScene" uid="uid://b7qmlryhm7p54" path="res://scenes/mouse_follower.tscn" id="4_ei8lx"]
 [ext_resource type="PackedScene" uid="uid://dwnpu51w0eyuj" path="res://scenes/warp_zone.tscn" id="5_614jn"]
+[ext_resource type="PackedScene" uid="uid://c3as6ernuq61n" path="res://scenes/mimi_2.tscn" id="7_exegq"]
 [ext_resource type="AudioStream" uid="uid://bxifa0e3jloa7" path="res://assets/sounds/まるでサスペンスドラマ～犯人は語る～.mp3" id="7_txqix"]
 
 [node name="Level1" type="Node2D"]
-scale = Vector2(0.997977, 1)
 script = ExtResource("1_nmwbc")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
 tile_set = ExtResource("2_p0tcw")
 format = 2
-layer_0/tile_data = PackedInt32Array(524288, 65536, 0, 524289, 65536, 0, 524290, 65536, 0, 524291, 65536, 0, 524292, 131072, 0, 524293, 65536, 0, 524294, 65536, 0, 524295, 65536, 0, 524296, 65536, 0, 524297, 65536, 0, 524298, 196608, 0, 589823, 65536, 0, 589822, 65536, 0, 589821, 131072, 0, 589820, 131072, 0, 589819, 589824, 9, 393211, 393216, 4, 458747, 393216, 4, 524283, 393216, 4, 655355, 0, 3, 655356, 65536, 3, 655357, 131072, 3, 655358, 65536, 3, 655359, 65536, 3, 589824, 65536, 3, 589825, 131072, 3, 589826, 131072, 3, 589827, 65536, 3, 589828, 65536, 3, 589829, 65536, 3, 589830, 65536, 3, 589831, 65536, 3, 589832, 65536, 3, 589833, 131072, 3, 589834, 196608, 3, 327675, 393216, 4, 262139, 393216, 2, 458766, 65536, 0, 524302, 131072, 3, 524301, 0, 3, 458765, 0, 0, 458767, 131072, 13, 458768, 65536, 1, 458770, 65536, 1, 458771, 65536, 1, 524306, 131072, 3, 524305, 65536, 3, 524304, 131072, 3, 524303, 131072, 3, 524307, 65536, 3, 393231, 0, 0, 393232, 65536, 0, 393233, 131072, 13, 458769, 65536, 1, 393234, 65536, 1, 393235, 65536, 1, 393236, 196608, 2, 458772, 196608, 1, 524308, 196608, 3, 327697, 0, 0, 327698, 65536, 0, 327699, 65536, 0, 327700, 196608, 0, 262167, 0, 0, 327703, 0, 2, 393239, 0, 3, 393240, 131072, 3, 393241, 65536, 3, 393242, 131072, 3, 393243, 196608, 3, 327707, 196608, 1, 262171, 196608, 0, 327706, 65536, 1, 262170, 65536, 0, 327705, 65536, 1, 262169, 131072, 0, 327704, 65536, 1, 262168, 65536, 0)
+layer_0/tile_data = PackedInt32Array(524288, 65536, 0, 524289, 65536, 0, 524290, 65536, 0, 524291, 65536, 0, 524292, 131072, 0, 524293, 65536, 0, 524294, 65536, 0, 524295, 65536, 0, 524296, 65536, 0, 524297, 65536, 0, 524298, 655360, 9, 589823, 65536, 0, 589822, 65536, 0, 589821, 0, 0, 589819, 196608, 0, 655355, 196608, 3, 655357, 0, 3, 655358, 65536, 3, 655359, 65536, 3, 589824, 65536, 3, 589825, 131072, 3, 589826, 131072, 3, 589827, 65536, 3, 589828, 65536, 3, 589829, 65536, 3, 589830, 65536, 3, 589831, 65536, 3, 589832, 65536, 3, 589833, 131072, 3, 589834, 196608, 3, 458766, 65536, 0, 524302, 131072, 3, 524301, 0, 3, 458765, 0, 0, 458767, 131072, 13, 458768, 65536, 1, 458770, 65536, 1, 458771, 65536, 1, 524306, 131072, 3, 524305, 65536, 3, 524304, 131072, 3, 524303, 131072, 3, 524307, 65536, 3, 393231, 0, 0, 393232, 65536, 0, 393233, 131072, 13, 458769, 65536, 1, 393234, 65536, 1, 393235, 65536, 1, 393236, 196608, 2, 458772, 196608, 1, 524308, 196608, 3, 327697, 0, 0, 327698, 65536, 0, 327699, 65536, 0, 327700, 196608, 0, 262167, 0, 0, 327703, 0, 2, 393239, 0, 3, 393240, 131072, 3, 393241, 65536, 3, 393242, 131072, 3, 393243, 196608, 3, 327707, 196608, 1, 262171, 196608, 0, 327706, 65536, 1, 262170, 65536, 0, 327705, 65536, 1, 262169, 131072, 0, 327704, 65536, 1, 262168, 65536, 0, 655354, 65536, 3, 655353, 131072, 3, 655352, 65536, 3, 655351, 131072, 3, 655350, 131072, 3, 655349, 0, 3, 589813, 0, 0, 589814, 65536, 0, 589815, 65536, 0, 589816, 65536, 0, 589817, 65536, 0, 589818, 131072, 0, 458762, 393216, 4, 327690, 393216, 2, 393226, 393216, 4)
 
 [node name="Beelzebub" parent="." instance=ExtResource("3_l8irn")]
-position = Vector2(165.334, 218)
+position = Vector2(169, 328)
 camera_enabled = false
 
 [node name="MouseFollower" parent="." instance=ExtResource("4_ei8lx")]
 position = Vector2(361.732, 132)
-
-[node name="Enemy" parent="." instance=ExtResource("2_3hmbg")]
-position = Vector2(-122.247, 314)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_3hmbg")]
-position = Vector2(460.932, 308)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 99.2007
@@ -50,3 +44,11 @@ position_smoothing_speed = 1.0
 stream = ExtResource("7_txqix")
 autoplay = true
 bus = &"Music"
+
+[node name="Mimi2" parent="." instance=ExtResource("7_exegq")]
+position = Vector2(-111, 327)
+scale = Vector2(2, 2)
+
+[node name="Mimi" parent="." instance=ExtResource("3_aywyd")]
+position = Vector2(-452, 239)
+scale = Vector2(2, 2)

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3as6ernuq61n"]
+
+[ext_resource type="Script" path="res://scenes/mimi_2.gd" id="1_2une4"]
+[ext_resource type="Texture2D" uid="uid://bh4p353f476af" path="res://assets/oak_woods_v1.0/character/char_blue.png" id="2_7hm30"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s4fay"]
+radius = 7.0
+height = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvd6q"]
+radius = 93.0215
+
+[node name="Mimi2" type="CharacterBody2D"]
+script = ExtResource("1_2une4")
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+modulate = Color(0, 0, 1, 1)
+texture = ExtResource("2_7hm30")
+hframes = 8
+vframes = 7
+frame = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("CapsuleShape2D_s4fay")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_qvd6q")

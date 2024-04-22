@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://xx5ksb1k2s4f"]
+
+[ext_resource type="Script" path="res://scenes/mimi.gd" id="1_4y8lr"]
+[ext_resource type="Texture2D" uid="uid://bh4p353f476af" path="res://assets/oak_woods_v1.0/character/char_blue.png" id="1_jh5ba"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s4fay"]
+radius = 7.0
+height = 32.0
+
+[node name="Mimi" type="CharacterBody2D"]
+script = ExtResource("1_4y8lr")
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+texture = ExtResource("1_jh5ba")
+hframes = 8
+vframes = 7
+frame = 11
+
+[node name="FloorRaycast" type="RayCast2D" parent="Pivot"]
+position = Vector2(16, 19)
+target_position = Vector2(0, 20)
+
+[node name="WallRaycast" type="RayCast2D" parent="Pivot"]
+position = Vector2(3, 18)
+target_position = Vector2(14, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("CapsuleShape2D_s4fay")
