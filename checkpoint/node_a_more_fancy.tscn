@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8aecqkubj5eu"]
+
+[ext_resource type="PackedScene" uid="uid://bftdem73fa0nr" path="res://checkpoint/folder/node_a.tscn" id="1_83h6x"]
+[ext_resource type="Script" path="res://checkpoint/node_a_more_fancy.gd" id="2_4x7j5"]
+
+[node name="NodeAMoreFancy" instance=ExtResource("1_83h6x")]
+script = ExtResource("2_4x7j5")
+owo = "254"

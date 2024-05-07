@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm5ko2ffh8tnx"]
+
+[ext_resource type="Script" path="res://checkpoint/node_a_fancy.gd" id="1_vknhy"]
+
+[node name="NodeAFancy" type="Node2D"]
+script = ExtResource("1_vknhy")

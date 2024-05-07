@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://brkq3xqiabcxx"]
+
+[ext_resource type="Script" path="res://checkpoint/checkpoint.gd" id="1_g1b3i"]
+[ext_resource type="PackedScene" uid="uid://121sqvi1dd56" path="res://checkpoint/node_b.tscn" id="2_31uvq"]
+[ext_resource type="PackedScene" uid="uid://bftdem73fa0nr" path="res://checkpoint/folder/node_a.tscn" id="2_h12sw"]
+[ext_resource type="Script" path="res://checkpoint/node_d.gd" id="3_wtkd4"]
+[ext_resource type="PackedScene" uid="uid://c8aecqkubj5eu" path="res://checkpoint/node_a_more_fancy.tscn" id="4_rqu24"]
+[ext_resource type="PackedScene" uid="uid://cbkpj4j0qsmga" path="res://checkpoint/enemy.tscn" id="5_ggrww"]
+[ext_resource type="PackedScene" uid="uid://l057fiw7mot7" path="res://checkpoint/enemy_2.tscn" id="6_v0yig"]
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_g1b3i")
+node_a_scene = ExtResource("2_h12sw")
+
+[node name="NodeD" type="Node2D" parent="."]
+script = ExtResource("3_wtkd4")
+
+[node name="NodeB" parent="." instance=ExtResource("2_31uvq")]
+
+[node name="NodeAMoreFancy" parent="." instance=ExtResource("4_rqu24")]
+
+[node name="Enemy" parent="." instance=ExtResource("5_ggrww")]
+position = Vector2(80, 17)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_v0yig")]
+position = Vector2(307, -12)

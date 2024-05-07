@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbkpj4j0qsmga"]
+
+[ext_resource type="PackedScene" uid="uid://lw6ybxk48l6j" path="res://checkpoint/character.tscn" id="1_uppbp"]
+[ext_resource type="Script" path="res://checkpoint/enemy.gd" id="2_uwmrt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5wg2"]
+radius = 88.0057
+
+[node name="Enemy" instance=ExtResource("1_uppbp")]
+script = ExtResource("2_uwmrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_j5wg2")

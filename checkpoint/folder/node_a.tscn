@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bftdem73fa0nr"]
+
+[ext_resource type="Script" path="res://checkpoint/folder/node_a.gd" id="1_hjxmr"]
+
+[node name="NodeA" type="Node2D"]
+script = ExtResource("1_hjxmr")
+
+[node name="NodeE" type="Node2D" parent="."]
+
+[node name="NodeF" type="Node2D" parent="NodeE"]
+position = Vector2(31, 23)
