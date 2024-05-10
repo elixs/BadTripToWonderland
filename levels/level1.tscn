@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf8akws67qkhh"]
+[gd_scene load_steps=10 format=3 uid="uid://bf8akws67qkhh"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_nmwbc"]
 [ext_resource type="TileSet" uid="uid://eik7u181gaf" path="res://resources/tileset.tres" id="2_p0tcw"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dwnpu51w0eyuj" path="res://scenes/warp_zone.tscn" id="5_614jn"]
 [ext_resource type="PackedScene" uid="uid://c3as6ernuq61n" path="res://scenes/mimi_2.tscn" id="7_exegq"]
 [ext_resource type="AudioStream" uid="uid://bxifa0e3jloa7" path="res://assets/sounds/まるでサスペンスドラマ～犯人は語る～.mp3" id="7_txqix"]
+[ext_resource type="PackedScene" uid="uid://6an7aj3q45wl" path="res://scenes/tool_example.tscn" id="9_5pfx5"]
 
-[node name="Level1" type="Node2D"]
+[node name="Otoo" type="Node2D"]
 script = ExtResource("1_nmwbc")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -52,3 +53,9 @@ scale = Vector2(2, 2)
 [node name="Mimi" parent="." instance=ExtResource("3_aywyd")]
 position = Vector2(-452, 239)
 scale = Vector2(2, 2)
+
+[node name="ToolExample" parent="." instance=ExtResource("9_5pfx5")]
+color = Color(0.294134, 1.93726e-05, 0.252005, 1)
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(0, 36)

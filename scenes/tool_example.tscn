@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://6an7aj3q45wl"]
+
+[ext_resource type="Script" path="res://scenes/tool_example.gd" id="1_3aeah"]
+[ext_resource type="Texture2D" uid="uid://ud6qr7qx50xf" path="res://icon.svg" id="1_mrgr0"]
+[ext_resource type="Texture2D" uid="uid://b3wa3l0oi0mgp" path="res://assets/buer/buer(0).png" id="2_omtkb"]
+
+[node name="ToolExample" type="Node2D"]
+script = ExtResource("1_3aeah")
+texture = ExtResource("2_omtkb")
+color = Color(0.933974, 0.545501, 0.28881, 1)
+godots = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mrgr0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
