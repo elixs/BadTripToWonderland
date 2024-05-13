@@ -11,6 +11,8 @@ var acceleration = 3000
 var id = "beelzebub"
 
 
+var was_on_floor = false
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var pivot: Node2D = $Pivot
@@ -19,6 +21,7 @@ var id = "beelzebub"
 @onready var jumps_label: Label = $JumpsLabel
 @onready var jump_audio: AudioStreamPlayer = $JumpAudio
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var grass_particles: GPUParticles2D = $Pivot/GrassParticles
 
 
 func _ready() -> void:
@@ -51,6 +54,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("save"):
 		Game.save_game()
 	
+	if is_on_floor() and not was_on_floor:
+		grass_particles.emitting = true
+	
+	was_on_floor = is_on_floor()
 	# animation
 	if is_on_floor():
 		if abs(velocity.x) > 10 or move_input:

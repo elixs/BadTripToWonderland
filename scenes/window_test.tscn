@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://csjgy2emw3mqa"]
+
+[node name="WindowTest" type="Node2D"]
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(200, 200)
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "asdfadsfa"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "dfsd"
+
+[node name="Button2" type="Button" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "saf"
+
+[node name="Button3" type="Button" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "asf"
+
+[node name="Button4" type="Button" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "asf"
+
+[node name="Button5" type="Button" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "asf"

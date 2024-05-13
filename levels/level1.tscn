@@ -56,6 +56,3 @@ scale = Vector2(2, 2)
 
 [node name="ToolExample" parent="." instance=ExtResource("9_5pfx5")]
 color = Color(0.294134, 1.93726e-05, 0.252005, 1)
-
-[node name="Window" type="Window" parent="."]
-position = Vector2i(0, 36)
